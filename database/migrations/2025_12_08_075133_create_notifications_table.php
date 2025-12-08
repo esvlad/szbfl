@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->bigInteger('notifications_type_id');
+            $table->char('to', 2);
+            $table->bigInteger('to_id');
+            $table->string('title');
+            $table->text('body');
+            $table->tinyInteger('views', 0);
+            $table->timestamp('created_at');
         });
     }
 

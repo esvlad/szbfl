@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('questions_clients', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->bigInteger('question_id');
+            $table->bigInteger('client_id');
+            $table->tinyInteger('views', 0);
         });
     }
 
