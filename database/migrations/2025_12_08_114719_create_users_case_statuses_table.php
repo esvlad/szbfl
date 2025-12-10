@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users_case_statuses', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
+            $table->integer('user_id');
             $table->tinyInteger('case_statuses_id');
             $table->timestamp('created_at');
         });

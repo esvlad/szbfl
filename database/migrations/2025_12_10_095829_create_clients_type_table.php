@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notifications_clients', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('clients_type', function (Blueprint $table) {
+            $table->tinyIncrements('id');
+            $table->string('title')->uniqunique();
+            $table->tinyInteger('status', 1);
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notifications_clients');
+        Schema::dropIfExists('clients_type');
     }
 };
