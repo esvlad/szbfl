@@ -16,6 +16,7 @@ return new class extends Migration
             $table->bigInteger('question_id');
             $table->integer('client_id');
             $table->integer('user_id');
+            $table->char('from', 1)
             $table->text('answer');
             $table->timestamps();
         });

@@ -17,11 +17,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('last_name');
             $table->string('second_name');
+            $table->string('full_name');
             $table->string('phone');
             $table->string('address');
-            $table->string('contract');
-            $table->string('case_number');
-            $table->string('kad_arbitr_link');
+            $table->string('contract')->uniqunique();
+            $table->string('case_number')->uniqunique();
+            $table->string('kad_arbitr_link')->uniqunique();
             $table->tinyInteger('financial_manager_id');
             $table->timestamps();
         });

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('type_id');
             $table->integer('client_id');
             $table->integer('user_id');
+            $table->char('from', 1)
             $table->string('title');
             $table->text('message');
             $table->tinyInteger('status', 0);
