@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('clients_type', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->string('title')->uniqunique();
+            $table->string('title')->unique();
             $table->tinyInteger('status', 1);
         });
     }

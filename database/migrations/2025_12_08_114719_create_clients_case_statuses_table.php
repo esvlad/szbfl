@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('financial_managers', function (Blueprint $table) {
-            $table->tinyIncrements('id');
-            $table->tinyIncrements('bitrix_id')->unique();
-            $table->string('title')->unique();
+        Schema::create('clients_case_statuses', function (Blueprint $table) {
+            $table->id();
+            $table->integer('user_id');
+            $table->tinyInteger('case_statuses_id');
+            $table->timestamp('created_at');
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('financial_managers');
+        Schema::dropIfExists('clients_case_statuses');
     }
 };

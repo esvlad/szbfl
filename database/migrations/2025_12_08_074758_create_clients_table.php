@@ -13,17 +13,15 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unique();
             $table->tinyInteger('type_id');
             $table->string('name');
             $table->string('last_name');
-            $table->string('second_name');
+            $table->string('second_name')->nullable();
             $table->string('full_name');
             $table->string('phone');
-            $table->string('address');
-            $table->string('contract')->uniqunique();
-            $table->string('case_number')->uniqunique();
-            $table->string('kad_arbitr_link')->uniqunique();
-            $table->tinyInteger('financial_manager_id');
+            $table->string('address')->nullable();
+            $table->string('contract')->nullable();
             $table->timestamps();
         });
     }

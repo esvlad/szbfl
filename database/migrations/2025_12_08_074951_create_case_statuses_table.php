@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('case_statuses', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->string('title')->uniqunique();
+            $table->string('title')->unique();
             $table->text('caption');
         });
     }

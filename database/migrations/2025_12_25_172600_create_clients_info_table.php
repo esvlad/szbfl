@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users_case_statuses', function (Blueprint $table) {
+        Schema::create('clients_info', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->tinyInteger('case_statuses_id');
-            $table->timestamp('created_at');
+            $table->integer('client_id')->unique();
+            $table->string('case_number')->unique();
+            $table->string('kad_arbitr_link')->unique();
+            $table->tinyInteger('financial_manager_id');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users_case_statuses');
+        Schema::dropIfExists('clients_info');
     }
 };

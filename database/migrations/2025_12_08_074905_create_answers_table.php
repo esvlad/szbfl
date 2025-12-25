@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('question_id');
-            $table->integer('client_id');
-            $table->integer('user_id');
-            $table->char('from', 1)
+            $table->integer('question_id');
+            $table->integer('client_id')->nullable();
+            $table->integer('user_id')->nullable();
+            $table->char('from', 1);
             $table->text('answer');
             $table->timestamps();
         });

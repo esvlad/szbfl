@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->integer('client_id');
+            $table->integer('user_id')->nullable();
             $table->text('question');
             $table->tinyInteger('status', 0);
             $table->timestamps();
