@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('clients_info', function (Blueprint $table) {
             $table->id();
             $table->integer('client_id')->unique();
-            $table->string('case_number')->unique();
-            $table->string('kad_arbitr_link')->unique();
+            $table->string('case_number', 10)->unique();
+            $table->string('kad_arbitr_link', 150)->unique();
             $table->tinyInteger('financial_manager_id');
         });
     }

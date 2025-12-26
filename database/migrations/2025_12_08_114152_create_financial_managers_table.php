@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('financial_managers', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->tinyIncrements('bitrix_id')->unique();
-            $table->string('title')->unique();
+            $table->string('bitrix_id', 20)->unique();
+            $table->string('title', 255)->unique();
         });
     }
 

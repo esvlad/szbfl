@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('case_statuses', function (Blueprint $table) {
             $table->tinyIncrements('id');
-            $table->string('title')->unique();
-            $table->text('caption');
+            $table->string('bitrix_id')->unique();
+            $table->string('title');
+            $table->text('caption')->nullable();
         });
     }
 

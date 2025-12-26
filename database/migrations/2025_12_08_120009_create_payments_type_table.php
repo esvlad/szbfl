@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('payments_type', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
+            $table->integer('fid')->unique();
+            $table->string('title', 30)->unique();
         });
     }
 

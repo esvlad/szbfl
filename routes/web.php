@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
     HomeController as AdminHomeController,
     UsersController as AdminUsersController,
+    ClientsController as AdminClientsController,
     QuestionsController as AdminQuestionsController,
     AnswersController as AdminAnswersController
 };
